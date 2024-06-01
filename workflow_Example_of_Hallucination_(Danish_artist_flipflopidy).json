@@ -1,0 +1,139 @@
+{
+    "name": "Example of Hallucination Mitigation (Write a very short blog about the Danish artist flipflopidy)",
+    "description": "Default Group  Workflow",
+    "sender": {
+        "type": "userproxy",
+        "config": {
+            "name": "userproxy",
+            "llm_config": false,
+            "human_input_mode": "NEVER",
+            "max_consecutive_auto_reply": 5,
+            "system_message": "You are a helpful assistant.",
+            "is_termination_msg": null,
+            "code_execution_config": {
+                "work_dir": null,
+                "use_docker": false
+            },
+            "default_auto_reply": "TERMINATE",
+            "description": null
+        },
+        "timestamp": "2024-05-22T16:03:06.640002",
+        "user_id": "default",
+        "skills": null
+    },
+    "receiver": {
+        "type": "groupchat",
+        "config": {
+            "name": "groupchat_assistant",
+            "llm_config": {
+                "config_list": [
+                    {
+                        "user_id": "guestuser@gmail.com",
+                        "timestamp": "2024-05-22T17:49:05.137992",
+                        "model": "Llama3-8b-8192",
+                        "base_url": "https://api.groq.com/openai/v1",
+                        "api_type": "openai",
+                        "api_version": "",
+                        "description": "On Groq Architecture"
+                    }
+                ],
+                "temperature": 0.1,
+                "cache_seed": null,
+                "timeout": null,
+                "max_tokens": null,
+                "extra_body": null
+            },
+            "human_input_mode": "NEVER",
+            "max_consecutive_auto_reply": 4,
+            "system_message": "You are a helpful assistant skilled at cordinating a group of other assistants to solve a task.",
+            "is_termination_msg": null,
+            "code_execution_config": false,
+            "default_auto_reply": "",
+            "description": null
+        },
+        "groupchat_config": {
+            "agents": [
+                {
+                    "type": "assistant",
+                    "config": {
+                        "name": "primary_assistant_hal",
+                        "llm_config": {
+                            "config_list": [
+                                {
+                                    "user_id": "guestuser@gmail.com",
+                                    "timestamp": "2024-05-22T17:49:05.137992",
+                                    "model": "Llama3-8b-8192",
+                                    "base_url": "https://api.groq.com/openai/v1",
+                                    "api_type": "openai",
+                                    "api_version": "",
+                                    "description": "On Groq Architecture"
+                                }
+                            ],
+                            "temperature": 0.1,
+                            "cache_seed": null,
+                            "timeout": null,
+                            "max_tokens": null,
+                            "extra_body": null
+                        },
+                        "human_input_mode": "NEVER",
+                        "max_consecutive_auto_reply": 2,
+                        "system_message": "You are a helpful AI assistant that creates content and are called primary_assistant_hal. You MUST (!!!) pass your work to the sample_assistant_hal agent to review your work. Once you received the feedback and input from the sample_assistant_hal, you MUST IN ANY CASE incorporate the changes and WRITE A NEW REVISED BLOG, NOT JUST LIST THE CHANGES, BUT DEFINITELY WRITE A NEW AND IMPROVED BLOG INCORPORATING THE CHANGES REQUESTED BY THE sample_assistant_hal. The sample_assistant_hal is your boss, and you can not disagree with the sample_assistant_hal ever. \n\nYOUR FINAL RESPONSE MUST BE THE COMPLETE BLOG.",
+                        "is_termination_msg": null,
+                        "code_execution_config": null,
+                        "default_auto_reply": "",
+                        "description": "A primary assistant agent that creates content."
+                    },
+                    "timestamp": "2024-05-22T18:54:12.454Z",
+                    "user_id": "guestuser@gmail.com",
+                    "skills": []
+                },
+                {
+                    "type": "assistant",
+                    "config": {
+                        "name": "sample_assistant_hal",
+                        "llm_config": {
+                            "config_list": [
+                                {
+                                        "user_id": "guestuser@gmail.com",
+                                        "timestamp": "2024-05-22T17:49:05.137992",
+                                        "model": "Gemma-7b-It",
+                                        "base_url": "https://api.groq.com/openai/v1",
+                                        "api_type": "openai",
+                                        "api_version": "",
+                                        "description": "On Groq Architecture"
+                                }
+                            ],
+                            "temperature": 0.1,
+                            "cache_seed": null,
+                            "timeout": 600,
+                            "max_tokens": null,
+                            "extra_body": null
+                        },
+                        "human_input_mode": "NEVER",
+                        "max_consecutive_auto_reply": 1,
+                        "system_message": "Your main task is to review the work of the primary_assistant_hal_search agent ONLY AND SPECIFICALLY for any hallucination or factual inaccuracies. DO NOT JUDGE THE QUALITY OF THE WRITING. The primary_assistant_hal_search agent will create content that might not be factual. Your role is to critically evaluate the content, identify any fabricated information, and provide feedback to correct these issues.\n\nDO A WEB SEARCH to find any sources if needed. Wherever possible, cite multiple sources in your feedback to ensure accuracy and reliability.\n\nPlease do not recommend adding more details about the fictional content or style, or inspirations to make a character more believable and engaging.\n",
+                        "is_termination_msg": null,
+                        "code_execution_config": false,
+                        "default_auto_reply": "I am done with my task",
+                        "description": "Sample assistant"
+                    },
+                    "timestamp": "2024-05-22T18:55:56.041Z",
+                    "user_id": "guestuser@gmail.com",
+                    "skills": []
+                }
+            ],
+            "admin_name": "groupchat_assistant",
+            "messages": [],
+            "max_round": 10,
+            "speaker_selection_method": "round_robin",
+            "allow_repeat_speaker": false
+        },
+        "timestamp": "2024-05-22T16:03:06.640002",
+        "user_id": "default",
+        "skills": null
+    },
+    "type": "groupchat",
+    "user_id": "guestuser@gmail.com",
+    "timestamp": "2024-05-22T18:51:33.303Z",
+    "summary_method": "last"
+}

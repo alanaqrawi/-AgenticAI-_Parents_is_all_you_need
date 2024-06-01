@@ -1,0 +1,139 @@
+{
+    "name": "Example of Reasoning (TEST)",
+    "description": "Default Group  Workflow",
+    "sender": {
+        "type": "userproxy",
+        "config": {
+            "name": "userproxy",
+            "llm_config": false,
+            "human_input_mode": "NEVER",
+            "max_consecutive_auto_reply": 5,
+            "system_message": "You are a helpful assistant.",
+            "is_termination_msg": null,
+            "code_execution_config": {
+                "work_dir": null,
+                "use_docker": false
+            },
+            "default_auto_reply": "TERMINATE",
+            "description": null
+        },
+        "timestamp": "2024-05-22T16:03:06.640002",
+        "user_id": "default",
+        "skills": null
+    },
+    "receiver": {
+        "type": "groupchat",
+        "config": {
+            "name": "groupchat_assistant",
+            "llm_config": {
+                "config_list": [
+                    {
+                        "user_id": "guestuser@gmail.com",
+                        "timestamp": "2024-05-22T17:49:05.137992",
+                        "model": "Llama3-8b-8192",
+                        "base_url": "https://api.groq.com/openai/v1",
+                        "api_type": "openai",
+                        "api_version": "",
+                        "description": "On Groq Architecture"
+                    }
+                ],
+                "temperature": 0.1,
+                "cache_seed": null,
+                "timeout": null,
+                "max_tokens": null,
+                "extra_body": null
+            },
+            "human_input_mode": "NEVER",
+            "max_consecutive_auto_reply": 4,
+            "system_message": "You are a helpful assistant skilled at cordinating a group of other assistants to solve a task.",
+            "is_termination_msg": null,
+            "code_execution_config": false,
+            "default_auto_reply": "",
+            "description": null
+        },
+        "groupchat_config": {
+            "agents": [
+                {
+                    "type": "assistant",
+                    "config": {
+                        "name": "primary_assistant_reasoning",
+                        "llm_config": {
+                            "config_list": [
+                                {
+                                    "user_id": "guestuser@gmail.com",
+                                    "timestamp": "2024-05-22T17:49:05.137992",
+                                    "model": "Llama3-8b-8192",
+                                    "base_url": "https://api.groq.com/openai/v1",
+                                    "api_type": "openai",
+                                    "api_version": "",
+                                    "description": "On Groq Architecture"
+                                }
+                            ],
+                            "temperature": 0.1,
+                            "cache_seed": null,
+                            "timeout": null,
+                            "max_tokens": null,
+                            "extra_body": null
+                        },
+                        "human_input_mode": "NEVER",
+                        "max_consecutive_auto_reply": 1,
+                        "system_message": "You are a helpful AI assistant. ",
+                        "is_termination_msg": null,
+                        "code_execution_config": null,
+                        "default_auto_reply": "TERMINATE",
+                        "description": "A primary assistant agent that answers user requests"
+                    },
+                    "timestamp": "2024-05-22T20:20:50.130Z",
+                    "user_id": "guestuser@gmail.com",
+                    "skills": []
+                },
+                {
+                    "type": "assistant",
+                    "config": {
+                        "name": "sample_assistant_reasoning2T",
+                        "llm_config": {
+                            "config_list": [
+                                {
+                                    "user_id": "guestuser@gmail.com",
+                                    "timestamp": "2024-05-22T16:29:00.147Z",
+                                    "model": "gpt-4-1106-preview",
+                                    "base_url": "https://api.openai.com/v1/",
+                                    "api_type": "openai",
+                                    "api_version": null,
+                                    "description": "GPT4-1106"
+                                }
+                            ],
+                            "temperature": 0.1,
+                            "cache_seed": null,
+                            "timeout": null,
+                            "max_tokens": null,
+                            "extra_body": null
+                        },
+                        "human_input_mode": "NEVER",
+                        "max_consecutive_auto_reply": 1,
+                        "system_message": "Your main task is to review the output of the sample_assistant1. Check if there are any reasoning issues. Take your time to think and go step by step.",
+                        "is_termination_msg": null,
+                        "code_execution_config": false,
+                        "default_auto_reply": "I am done with my task",
+                        "description": "Sample assistant 2"
+                    },
+                    "timestamp": "2024-05-22T20:21:48.116Z",
+                    "user_id": "guestuser@gmail.com",
+                    "skills": []
+                }
+            ],
+            "admin_name": "groupchat_assistant",
+            "messages": [],
+            "max_round": 10,
+            "speaker_selection_method": "round_robin",
+            "allow_repeat_speaker": false
+        },
+        "timestamp": "2024-05-22T16:03:06.640002",
+        "user_id": "default",
+        "skills": null
+    },
+    "type": "groupchat",
+    "user_id": "guestuser@gmail.com",
+    "timestamp": "2024-05-24T16:12:08.469Z",
+    "summary_method": "last"
+}
