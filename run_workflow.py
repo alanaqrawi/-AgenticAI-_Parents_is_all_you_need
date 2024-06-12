@@ -153,6 +153,6 @@ def run_workflow_and_log():
     logger.info(f"Last message written to Excel: {excel_file_path}")
 
 # Run the workflow X times with a Y-second pause between each run
-for _ in range(90):
+for _ in range(84):
     run_workflow_and_log()
-    time.sleep(60)
+    time.sleep(45)
