@@ -51,7 +51,6 @@ Local model (not used in our case): use LMStudio for that
 => If you want to try another task that is not the Danish artist, just change the "task_query" in the run_workflow.py file
 
 4) install the libraries mentioned in the run_workflow.py file
-
-conda create -n autogen python=3.11
-conda activate autogen
-pip install autogenstudio# PiAyN
+- conda create -n autogen python=3.11
+- conda activate autogen
+- pip install autogenstudio# PiAyN
