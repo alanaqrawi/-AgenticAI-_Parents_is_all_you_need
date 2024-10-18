@@ -33,7 +33,7 @@ The observation tab captures observations
 # Running the code
 1) Add your groq and openAI api keys to .env
 
-2) workflow_Example_of_Hallucination_(Danish_artist_flipflopidy).json is where the workflow is handled. Here you can replace the agents (you can use the agent names mentioned in the [sheet] (https://docs.google.com/spreadsheets/d/1cRUKYDR-PFHnZznXtOiqLZRrFjUCCso1ZawYrvl48Rc/edit?gid=0#gid=0) ). The respective base urls are 
+2) workflow_Example_of_Hallucination_(Danish_artist_flipflopidy).json is where the workflow is handled. Here you can replace the agents (you can use the agent names mentioned in the [sheet]. The respective base urls are 
 - GPT4 models: https://api.openai.com/v1
 - Groq models (Mixtral, Gemma, LLama3): https://api.groq.com/openai/v1
 - Local model (not used in our case): use LMStudio for that 
