@@ -1,9 +1,5 @@
 # PiAyN
 
-# Test Results
-https://docs.google.com/spreadsheets/d/1cRUKYDR-PFHnZznXtOiqLZRrFjUCCso1ZawYrvl48Rc/edit?gid=0#gid=0
-
-
 # Definition of agents
 - primary agent = Content creator
 - sample assistant agent = Reviewer agent
@@ -14,9 +10,6 @@ https://docs.google.com/spreadsheets/d/1cRUKYDR-PFHnZznXtOiqLZRrFjUCCso1ZawYrvl4
 - => primary agent (final output)
 
 # How the Test Results are captured
-When an agent pair is run, I captured the test results in the "Test results" tab. Column G identifies if the final agent fixed the hallucination. Columnd J identifies, when there was a hallucination still present in the (final output), if the reviewer previously had managed to identify the hallucination (this way we can measure also acceptance rate). When Column J had a No, I went into the specific log files below to review the reviewer agent.
-
-Additionally for logging purposes:
 - Each agent pair's results are logged in an xlxs file in the github folder. The filename contains which agent pair it related to
 - All ever workflow results run, are stored in the workflow_log.txt - this let's you review each interaction in highest detail
 
